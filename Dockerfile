@@ -9,8 +9,9 @@ RUN set -ex && apk add --no-cache curl \
   && mv AllOrigins-master/* /app
 
 WORKDIR /app
-RUN npm install
+RUN npm install --production
 
+ENV NODE_ENV=production
 CMD ["node", "server.js"]
 
 EXPOSE 1458
